@@ -37,9 +37,13 @@ services:
         target: /usr/share/logstash/config/logstash.yml
         read_only: true
       - type: bind
-        source: ./logstash/pipeline/logstash.conf
+        source: ./logstash/pipeline/logstash01.conf
         target: /usr/share/logstash/pipeline/logstash.conf
         read_only: true
+      - type: bind
+        source: ./dataset-sample/apache-access.log
+        target: /usr/share/logstash/apache-access.log
+        read_only: true  
     ports:
       - "5000:5000"
       - "9600:9600"
