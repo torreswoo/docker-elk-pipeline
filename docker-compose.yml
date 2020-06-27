@@ -37,12 +37,11 @@ services:
         target: /usr/share/logstash/config/logstash.yml
         read_only: true
       - type: bind
-        source: ./logstash/pipeline
-        target: /usr/share/logstash/pipeline
+        source: ./logstash/pipeline/logstash.conf
+        target: /usr/share/logstash/pipeline/logstash.conf
         read_only: true
     ports:
-      - "5000:5000/tcp"
-      - "5000:5000/udp"
+      - "5000:5000"
       - "9600:9600"
     environment:
       LS_JAVA_OPTS: "-Xmx256m -Xms256m"
