@@ -23,7 +23,7 @@ RUN apt-get update -qq \
  && apt-get install -qqy curl \
  && apt-get clean
 
-RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${FILEBEAT_VERSION}-amd64.deb \
+RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${ELK_VERSION}-amd64.deb \
  && dpkg -i filebeat-${ELK_VERSION}-amd64.deb \
  && rm filebeat-${ELK_VERSION}-amd64.deb
 

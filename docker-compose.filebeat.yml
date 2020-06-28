@@ -44,8 +44,13 @@ services:
         source: ./dataset-sample/apache-access.log
         target: /usr/share/logstash/apache-access.log
         read_only: true  
+      - type: bind
+        source: ./logstash/pattern/nginx.pattern
+        target: /usr/share/logstash/pattern/nginx.pattern
+        read_only: true
     ports:
       - "5000:5000"
+      - "5044:5044"
       - "9600:9600"
     environment:
       LS_JAVA_OPTS: "-Xmx256m -Xms256m"
@@ -77,9 +82,9 @@ services:
       args:
         ELK_VERSION: $ELK_VERSION
     volumes:
-      - type: bind
-        source: ./nginx-filebeat
-        target: /etc/nginx
+      # - type: bind
+      #   source: ./nginx-filebeat
+      #   target: /etc/nginx
       - type: bind
         source: ./nginx-filebeat/log
         target: /var/log
@@ -89,6 +94,8 @@ services:
       - elk
     depends_on:
       - elasticsearch
+      - kibana
+      - logstash
       
 
 networks:
