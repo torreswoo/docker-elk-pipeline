@@ -78,7 +78,7 @@ services:
 
   nginx:
     build:
-      context: nginx-filebeat/
+      context: beats/filebeat-nginx/
       args:
         ELK_VERSION: $ELK_VERSION
     volumes:
@@ -86,7 +86,7 @@ services:
       #   source: ./nginx-filebeat
       #   target: /etc/nginx
       - type: bind
-        source: ./nginx-filebeat/log
+        source: ./beats/filebeat-nginx/log
         target: /var/log
     ports:
       - "8080:80"

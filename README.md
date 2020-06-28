@@ -53,7 +53,7 @@ $ curl -L -O https://raw.githubusercontent.com/elastic/beats/7.8/deploy/docker/m
 $ docker run \
 --name=metricbeat01 \
 --user=root \
---volume="$(pwd)/metricbeat.docker.yml:/usr/share/metricbeat/metricbeat.yml:ro" \
+--volume="$(pwd)/beats/metricbeat-config/metricbeat.docker.yml:/usr/share/metricbeat/metricbeat.yml:ro" \
 --volume="/var/run/docker.sock:/var/run/docker.sock:ro" \
 --volume="/sys/fs/cgroup:/hostfs/sys/fs/cgroup:ro" \
 --volume="/proc:/hostfs/proc:ro" \
@@ -74,6 +74,8 @@ $ tar -xvf filebeat-7.1.0-darwin-x86_64.tar.gz
 $ cd filebeat-7.1.0-darwin-x86_64
 
 $ ./filebeat setup --dashboards
+$ ./filebeat export config
+$ ./filebeat export template --es.version 7.6.2 --index filebeat-*
 $ ./filebeat modules enable nginx
 $ sudo chown root filebeat.yml
 $ sudo chown root modules.d/nginx.yml
