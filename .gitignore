@@ -1,7 +1,7 @@
 beats/filebeat-7.*
 beats/metricbeat-7.*
 
-# elasticsearch/data
+elasticsearch/data
 extensions
 
 dataset/__pycache__

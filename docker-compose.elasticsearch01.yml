@@ -6,7 +6,7 @@ services:
     environment:
       - node.name=es01
       - node.master=true
-      - node.data=false
+      - node.data=true
       - cluster.name=es-docker-cluster
       - discovery.seed_hosts=es02,es03
       - cluster.initial_master_nodes=es01,es02
@@ -33,7 +33,7 @@ services:
     environment:
       - node.name=es02
       - node.master=true
-      - node.data=false
+      - node.data=true
       - cluster.name=es-docker-cluster
       - discovery.seed_hosts=es01,es03
       - cluster.initial_master_nodes=es01,es02
