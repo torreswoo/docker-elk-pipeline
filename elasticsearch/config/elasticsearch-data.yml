@@ -1,0 +1,14 @@
+http.host: 0.0.0.0
+transport.host: 0.0.0.0
+
+cluster.name: prod_es_cluster
+#node.name: prod_es_node1
+node.master: false
+node.data: true
+discovery.zen.ping_timeout: 10s
+
+network.host: 0.0.0.0
+network.bind_host: 0.0.0.0
+network.publish_host: 0.0.0.0
+transport.tcp.port: 9300
+discovery.zen.ping.unicast.hosts: ["elasticsearch"]

@@ -1,0 +1,60 @@
+# References:
+# - https://docs.docker.com/compose/compose-file/compose-file-v2/
+# - https://www.elastic.co/guide/en/elasticsearch/reference/7.6/docker.html
+version: '2.2'
+services:
+  # ElasticSearch Master nodes
+  elasticsearch-master:
+    image: elasticsearch:${ELK_VERSION}
+    volumes:
+      - ./elasticsearch/config/elasticsearch-master.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    environment:
+      ES_JAVA_OPTS: "-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    mem_limit: 1g
+    ports:
+      - 9200
+      - 9300
+    scale: 2
+
+  # ElasticSearch data nodes
+  elasticsearch-data:
+    image: elasticsearch:${ELK_VERSION}
+    volumes:
+      - ./elasticsearch/config/elasticsearch-data.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    environment:
+      ES_JAVA_OPTS: "-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    mem_limit: 1g
+    ports:
+      - 9200
+      - 9300
+    scale: 1
+
+  kibana:
+    build:
+      context: kibana/
+      args:
+        ELK_VERSION: $ELK_VERSION
+    volumes:
+      - ./elasticsearch/data/data03:/usr/share/elasticsearch/data
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch-master
+
+  cerebro:
+    image: yannart/cerebro:latest
+    ports:
+      - 9000:9000
+    depends_on:
+      - elasticsearch-master    
+  
+# volumes:
+#   elasticsearch:

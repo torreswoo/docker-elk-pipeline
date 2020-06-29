@@ -1,0 +1,9 @@
+beats/filebeat-7.*
+beats/metricbeat-7.*
+
+# elasticsearch/data
+extensions
+
+dataset/__pycache__
+
+beats/filebeat-nginx/log/

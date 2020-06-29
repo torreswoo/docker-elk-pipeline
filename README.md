@@ -53,7 +53,7 @@ $ curl -L -O https://raw.githubusercontent.com/elastic/beats/7.8/deploy/docker/m
 $ docker run \
 --name=metricbeat01 \
 --user=root \
---volume="$(pwd)/beats/metricbeat-config/metricbeat.docker.yml:/usr/share/metricbeat/metricbeat.yml:ro" \
+--volume="$(pwd)/beats/metricbeat/metricbeat.docker.yml:/usr/share/metricbeat/metricbeat.yml:ro" \
 --volume="/var/run/docker.sock:/var/run/docker.sock:ro" \
 --volume="/sys/fs/cgroup:/hostfs/sys/fs/cgroup:ro" \
 --volume="/proc:/hostfs/proc:ro" \
