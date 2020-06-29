@@ -8,8 +8,8 @@ services:
       - node.master=true
       - node.data=true
       - cluster.name=es-docker-cluster
-      - discovery.seed_hosts=es02,es03
       - cluster.initial_master_nodes=es01,es02
+      - discovery.seed_hosts=es02,es03
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       - xpack.monitoring.collection.enabled=true
@@ -35,8 +35,8 @@ services:
       - node.master=true
       - node.data=true
       - cluster.name=es-docker-cluster
-      - discovery.seed_hosts=es01,es03
       - cluster.initial_master_nodes=es01,es02
+      - discovery.seed_hosts=es01,es03
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       - xpack.monitoring.collection.enabled=true
@@ -60,8 +60,8 @@ services:
       - node.master=false
       - node.data=true
       - cluster.name=es-docker-cluster
-      - discovery.seed_hosts=es01,es02
       - cluster.initial_master_nodes=es01,es02
+      - discovery.seed_hosts=es01,es02
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       - xpack.monitoring.collection.enabled=true
