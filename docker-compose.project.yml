@@ -1,0 +1,160 @@
+version: '2.2'
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:${ELK_VERSION}
+    container_name: project-es01
+    environment:
+      - node.name=es01
+      - node.master=true
+      - node.data=true
+      - cluster.name=es-project-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - xpack.monitoring.collection.enabled=true
+      - discovery.type=single-node  
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    mem_limit: 1g
+    volumes:
+      - ./elasticsearch/data/data00:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - elk
+
+  logstash:
+    build:
+      context: logstash/
+      args:
+        ELK_VERSION: $ELK_VERSION
+    volumes:
+      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./logstash/pipeline/logstash04.conf:/usr/share/logstash/pipeline/logstash.conf
+    ports:
+      - "5000:5000"
+      - "5044:5044"
+      - "9600:9600"
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+
+  kibana:
+    build:
+      context: kibana/
+      args:
+        ELK_VERSION: $ELK_VERSION
+    volumes:
+      - ./kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml
+    ports:
+      - "5601:5601"
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+  
+  zookeeper:
+    image: wurstmeister/zookeeper:3.4.6
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    networks:
+      - elk
+
+  kafka:
+    image: wurstmeister/kafka:2.12-2.3.0
+    # build: 
+    #   context: kafka/kafka-docker/
+    container_name: kafka
+    environment:
+      KAFKA_BROKER_ID: 999
+      # KAFKA_RESERVED_BROKER_MAX_ID: 1001
+      # KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://127.0.0.1:9092
+      # KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+      KAFKA_ADVERTISED_HOST_NAME:  127.0.0.1
+      # KAFKA_ADVERTISED_PORT: 9092
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_CREATE_TOPICS: "test-topic01:1:1,test-topic02:1:1"   # Topic명:Partition개수:Replica개수
+      # KAFKA_CREATE_TOPICS: "project-topic03:1:1,project-topic04:1:1"   # Topic명:Partition개수:Replica개수
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "9092:9092"
+    depends_on:
+      - zookeeper
+    networks:
+      - elk
+
+  kafka-manager:
+    container_name: kafka-manager
+    image: hlebalbau/kafka-manager:2.0.0.2
+    restart: on-failure
+    depends_on:
+    - kafka
+    - zookeeper
+    environment:
+      ZK_HOSTS: zookeeper:2181
+      APPLICATION_SECRET: "random"
+      KM_ARGS: -Djava.net.preferIPv4Stack=true
+    ports:
+    - "9000:9000"
+    networks:
+    - elk
+
+  # zk:
+  #   image: 31z4/zookeeper:3.4.8
+  #   ports:
+  #   - "2181:2181"
+  #   networks:
+  #   - elk
+
+  # kafka:
+  #   image: ches/kafka
+  #   links:
+  #   - zk
+  #   environment:
+  #     KAFKA_BROKER_ID: 0
+  #     KAFKA_ADVERTISED_HOST_NAME: kafka
+  #     KAFKA_ADVERTISED_PORT: 9092
+  #     KAFKA_CREATE_TOPICS: "project-topic:1:1"
+  #     ZOOKEEPER_CONNECTION_STRING: zk:2181
+  #     ZOOKEEPER_CHROOT: /broker-0
+  #   ports:
+  #   - "9092:9092"
+  #   networks:
+  #   - elk
+
+  nginx:
+    build:
+      context: beats/filebeat-project/
+      args:
+        ELK_VERSION: $ELK_VERSION
+    volumes:
+      - ./beats/filebeat-project/log:/var/log
+      - ./beats/filebeat-project/filebeat.yml:/etc/filebeat/filebeat.yml
+    ports:
+      - "8080:80"
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+      - kibana
+      - logstash
+      - kafka
+      
+
+networks:
+  elk:
+    driver: bridge
+
+volumes:
+  data00:
+    driver: local
