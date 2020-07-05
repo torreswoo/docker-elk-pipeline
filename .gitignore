@@ -25,8 +25,8 @@ project04/beats/filebeat-nginx/log
 project05/elasticsearch/data
 
 # project 06
-project06
 project06/elasticsearch/data
 project06/beats/filebeat-7.*
-project06/beats/filebeat-nginx/log
+project06/beats/filebeat-project/log
 project06/kafka/kafka_2.12*
+project06/kafka/kafka-docker

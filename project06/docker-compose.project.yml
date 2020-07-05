@@ -22,7 +22,7 @@ services:
         hard: 65536
     mem_limit: 1g
     volumes:
-      - ./elasticsearch/data/data00:/usr/share/elasticsearch/data
+      - ./elasticsearch/data:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
     networks:
@@ -35,7 +35,7 @@ services:
         ELK_VERSION: $ELK_VERSION
     volumes:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
-      - ./logstash/pipeline/logstash04.conf:/usr/share/logstash/pipeline/logstash.conf
+      - ./logstash/pipeline/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
     ports:
       - "5000:5000"
       - "5044:5044"
@@ -52,14 +52,14 @@ services:
       - zookeeper
 
   kibana:
-    build:
-      context: kibana/
-      args:
-        ELK_VERSION: $ELK_VERSION
-    volumes:
-      - ./kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml
+    image: kibana:${ELK_VERSION}
     ports:
       - "5601:5601"
+    environment:
+      - server.name=kibana
+      - server.host="0"
+      - elasticsearch.hosts=elasticsearch:9200
+      - xpack.monitoring.ui.container.elasticsearch.enabled=true
     networks:
       - elk
     depends_on:
@@ -141,6 +141,3 @@ networks:
   elk:
     driver: bridge
 
-volumes:
-  project:
-    driver: local

@@ -1,0 +1,23 @@
+filebeat:
+  inputs:
+    -
+      paths:
+        - /var/log/syslog
+        - /var/log/auth.log
+      document_type: syslog
+    -
+      paths:
+        - "/var/log/nginx/*.log"
+      fields_under_root: true
+      fields:
+        type: nginx-access
+
+output:
+  kafka:
+    hosts: ['${KAFKA_BOOTSTRAP_SERVERS}']
+    topic: '${KAFKA_TEST_TOPIC:test-topic01}'
+    partition.round_robin:
+      reachable_only: false
+    required_acks: 1
+    # compression: gzip
+    max_message_bytes: 1000000
