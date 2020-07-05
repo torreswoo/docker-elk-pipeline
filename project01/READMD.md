@@ -1,6 +1,7 @@
 # project01
 
 - HTTP -> logstash -> elasticsearch
+<img width="1391" alt="" src="https://user-images.githubusercontent.com/11022719/86531791-444c2400-beff-11ea-9690-0d10ea640514.png">
 
 - http://localhost:5601/
 - http://localhost:9200/

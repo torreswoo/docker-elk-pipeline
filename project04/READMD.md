@@ -1,5 +1,6 @@
 # project04
 - nginx log (w/Filebeat) -> logstash -> elasticsearch
+<img width="1373" alt="스크린샷 2020-07-05 오후 8 40 53" src="https://user-images.githubusercontent.com/11022719/86531859-d3f1d280-beff-11ea-9ea6-e6a6b9991727.png">
 
 - http://localhost:5601/
 - http://localhost:9200/
