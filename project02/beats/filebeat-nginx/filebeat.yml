@@ -1,0 +1,18 @@
+filebeat:
+  inputs:
+    -
+      paths:
+        - "/var/log/nginx/*.log"
+      fields_under_root: true
+      fields:
+        type: nginx-access
+
+output:
+  logstash:
+    enabled: true
+    hosts:
+      - logstash:5044
+    timeout: 15
+    # ssl:
+    #   certificate_authorities:
+    #   - /etc/pki/tls/certs/logstash-beats.crt

@@ -1,0 +1,2 @@
+2020/06/28 16:25:44 [error] 35#35: *1 open() "/usr/share/nginx/html/er" failed (2: No such file or directory), client: 172.20.0.1, server: localhost, request: "GET /er HTTP/1.1", host: "localhost:8080"
+2020/06/28 16:34:32 [error] 35#35: *4 open() "/usr/share/nginx/html/eer" failed (2: No such file or directory), client: 172.20.0.1, server: localhost, request: "GET /eer HTTP/1.1", host: "localhost:8080"
