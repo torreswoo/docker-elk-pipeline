@@ -7,6 +7,11 @@ dataset/__pycache__
 
 beats/filebeat-nginx/log/
 
+# project 01
+project01/elasticsearch/data
+
+# project 02
+project02/elasticsearch/data
 
 # project 03
 project03/elasticsearch/data
