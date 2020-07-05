@@ -9,7 +9,4 @@ FROM docker.elastic.co/logstash/logstash:${ELK_VERSION}
 # RUN bin/logstash-plugin logstash-input-http
 # RUN bin/logstash-plugin logstash-input-file
 
-# https://github.com/logstash-plugins/logstash-integration-kafka
-RUN bin/logstash-plugin install logstash-integration-kafka
-
 RUN bin/logstash-plugin list 

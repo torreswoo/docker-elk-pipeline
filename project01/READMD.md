@@ -1,6 +1,6 @@
 # project01
 
-- nginx log (w/Filebeat) -> logstash -> elasticsearch
+- HTTP -> logstash -> elasticsearch
 
 - http://localhost:5601/
 - http://localhost:9200/
