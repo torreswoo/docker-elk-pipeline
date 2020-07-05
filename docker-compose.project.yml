@@ -42,10 +42,14 @@ services:
       - "9600:9600"
     environment:
       LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+      KAFKA_BOOTSTRAP_SERVERS: kafka:19092
+      KAFKA_TEST_TOPIC: test-topic03
     networks:
       - elk
     depends_on:
       - elasticsearch
+      - kafka
+      - zookeeper
 
   kibana:
     build:
@@ -75,19 +79,21 @@ services:
     #   context: kafka/kafka-docker/
     container_name: kafka
     environment:
-      KAFKA_BROKER_ID: 999
-      # KAFKA_RESERVED_BROKER_MAX_ID: 1001
-      # KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://127.0.0.1:9092
-      # KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
-      KAFKA_ADVERTISED_HOST_NAME:  127.0.0.1
+      KAFKA_BROKER_ID: 1001
+      KAFKA_ADVERTISED_LISTENERS: LISTENER_DOCKER_INTERNAL://kafka:19092,LISTENER_DOCKER_EXTERNAL://localhost:9092
+      KAFKA_LISTENERS: LISTENER_DOCKER_INTERNAL://kafka:19092,LISTENER_DOCKER_EXTERNAL://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: LISTENER_DOCKER_INTERNAL:PLAINTEXT,LISTENER_DOCKER_EXTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: LISTENER_DOCKER_INTERNAL
+      KAFKA_RESERVED_BROKER_MAX_ID: 1002
+      # KAFKA_ADVERTISED_HOST_NAME:  127.0.0.1
       # KAFKA_ADVERTISED_PORT: 9092
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_CREATE_TOPICS: "test-topic01:1:1,test-topic02:1:1"   # Topic명:Partition개수:Replica개수
-      # KAFKA_CREATE_TOPICS: "project-topic03:1:1,project-topic04:1:1"   # Topic명:Partition개수:Replica개수
+      KAFKA_CREATE_TOPICS: "test-topic03:1:1,test-topic04:1:1"   # Topic명:Partition개수:Replica개수
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - "9092:9092"
+      - "19092:19092"
     depends_on:
       - zookeeper
     networks:
@@ -109,34 +115,14 @@ services:
     networks:
     - elk
 
-  # zk:
-  #   image: 31z4/zookeeper:3.4.8
-  #   ports:
-  #   - "2181:2181"
-  #   networks:
-  #   - elk
-
-  # kafka:
-  #   image: ches/kafka
-  #   links:
-  #   - zk
-  #   environment:
-  #     KAFKA_BROKER_ID: 0
-  #     KAFKA_ADVERTISED_HOST_NAME: kafka
-  #     KAFKA_ADVERTISED_PORT: 9092
-  #     KAFKA_CREATE_TOPICS: "project-topic:1:1"
-  #     ZOOKEEPER_CONNECTION_STRING: zk:2181
-  #     ZOOKEEPER_CHROOT: /broker-0
-  #   ports:
-  #   - "9092:9092"
-  #   networks:
-  #   - elk
-
   nginx:
     build:
       context: beats/filebeat-project/
       args:
         ELK_VERSION: $ELK_VERSION
+    environment: 
+      KAFKA_BOOTSTRAP_SERVERS: kafka:19092
+      KAFKA_TEST_TOPIC: test-topic03
     volumes:
       - ./beats/filebeat-project/log:/var/log
       - ./beats/filebeat-project/filebeat.yml:/etc/filebeat/filebeat.yml
@@ -156,5 +142,5 @@ networks:
     driver: bridge
 
 volumes:
-  data00:
+  project:
     driver: local
