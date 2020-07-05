@@ -1,4 +1,4 @@
-# project02
+# project04
 - nginx log (w/Filebeat) -> logstash -> elasticsearch
 
 - http://localhost:5601/

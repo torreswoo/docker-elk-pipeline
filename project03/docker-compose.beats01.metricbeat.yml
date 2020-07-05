@@ -14,7 +14,7 @@ services:
       - "9200:9200"
       - "9300:9300"
     environment:
-      - cluster.name=project01-es
+      - cluster.name=project03-es
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       - discovery.type=single-node
       - xpack.monitoring.collection.enabled=true
