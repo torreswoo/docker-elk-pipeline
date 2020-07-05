@@ -1,3 +1,5 @@
+kafka/kafka_2.12*
+
 beats/filebeat-7.*
 beats/metricbeat-7.*
 
@@ -7,3 +9,8 @@ extensions
 dataset/__pycache__
 
 beats/filebeat-nginx/log/
+
+
+# project 01
+project01/elasticsearch/data
+project01/beats/metricbeat-7.*
