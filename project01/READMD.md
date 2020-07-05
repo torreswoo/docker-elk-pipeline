@@ -4,7 +4,7 @@
 - http://localhost:9200/
 
 ```
-docker-compose -f docker-compose.beats01.metricbeat.yml
+docker-compose -f docker-compose.beats01.metricbeat.yml up
 docker-compose -f docker-compose.beats01.metricbeat.yml up --force-recreate --build 
 docker-compose up
 docker-compose ls

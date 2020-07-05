@@ -23,9 +23,9 @@ services:
       - elk
 
   kibana:
-    image: elasticsearch:${ELK_VERSION}
+    image: kibana:${ELK_VERSION}
     # build:
-    #   image: elasticsearch:${ELK_VERSION}
+    #   image: kibana:${ELK_VERSION}
     #   context: kibana/
     #   args:
     #     ELK_VERSION: $ELK_VERSION
@@ -61,7 +61,6 @@ services:
     depends_on:
       - elasticsearch
       - kibana
-      
 
 networks:
   elk:

@@ -1,8 +1,5 @@
 kafka/kafka_2.12*
 
-beats/filebeat-7.*
-beats/metricbeat-7.*
-
 elasticsearch/data
 extensions
 
@@ -14,3 +11,8 @@ beats/filebeat-nginx/log/
 # project 01
 project01/elasticsearch/data
 project01/beats/metricbeat-7.*
+
+# project 02
+project02/elasticsearch/data
+project02/beats/filebeat-7.*
+project02/beats/filebeat-nginx/log
