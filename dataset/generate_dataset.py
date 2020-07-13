@@ -10,7 +10,7 @@ from mappings import mappings
 
 DATA_NUM = 1000
 ES_INDEX_NAME = 'test_data'
-ES_URL = 'localhost:9200'
+ES_URL = 'elasticsearch:9200'
 
 def setup_index():
 
