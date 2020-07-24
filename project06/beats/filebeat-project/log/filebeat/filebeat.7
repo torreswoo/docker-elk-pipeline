@@ -1,0 +1,260 @@
+2020-07-05T00:20:20.031Z	INFO	instance/beat.go:622	Home path: [/usr/share/filebeat] Config path: [/etc/filebeat] Data path: [/var/lib/filebeat] Logs path: [/var/log/filebeat]
+2020-07-05T00:20:20.061Z	INFO	instance/beat.go:630	Beat ID: 99f69465-443a-43a1-8aa2-1b321ac1b17b
+2020-07-05T00:20:20.063Z	INFO	[seccomp]	seccomp/seccomp.go:124	Syscall filter successfully installed
+2020-07-05T00:20:20.063Z	INFO	[beat]	instance/beat.go:958	Beat info	{"system_info": {"beat": {"path": {"config": "/etc/filebeat", "data": "/var/lib/filebeat", "home": "/usr/share/filebeat", "logs": "/var/log/filebeat"}, "type": "filebeat", "uuid": "99f69465-443a-43a1-8aa2-1b321ac1b17b"}}}
+2020-07-05T00:20:20.063Z	INFO	[beat]	instance/beat.go:967	Build info	{"system_info": {"build": {"commit": "d57bcf8684602e15000d65b75afcd110e2b12b59", "libbeat": "7.6.2", "time": "2020-03-26T05:23:38.000Z", "version": "7.6.2"}}}
+2020-07-05T00:20:20.064Z	INFO	[beat]	instance/beat.go:970	Go runtime info	{"system_info": {"go": {"os":"linux","arch":"amd64","max_procs":3,"version":"go1.13.8"}}}
+2020-07-05T00:20:20.065Z	INFO	[beat]	instance/beat.go:974	Host info	{"system_info": {"host": {"architecture":"x86_64","boot_time":"2020-07-05T00:19:04Z","containerized":true,"name":"bd0c7fbb292d","ip":["127.0.0.1/8","172.20.0.8/16"],"kernel_version":"4.19.76-linuxkit","mac":["02:42:ac:14:00:08"],"os":{"family":"debian","platform":"debian","name":"Debian GNU/Linux","version":"10 (buster)","major":10,"minor":0,"patch":0,"codename":"buster"},"timezone":"UTC","timezone_offset_sec":0,"id":"912980eb96a071f7ab313eb6a5e5b2e7"}}}
+2020-07-05T00:20:20.068Z	INFO	[beat]	instance/beat.go:1003	Process info	{"system_info": {"process": {"capabilities": {"inheritable":["chown","dac_override","fowner","fsetid","kill","setgid","setuid","setpcap","net_bind_service","net_raw","sys_chroot","mknod","audit_write","setfcap"],"permitted":["chown","dac_override","fowner","fsetid","kill","setgid","setuid","setpcap","net_bind_service","net_raw","sys_chroot","mknod","audit_write","setfcap"],"effective":["chown","dac_override","fowner","fsetid","kill","setgid","setuid","setpcap","net_bind_service","net_raw","sys_chroot","mknod","audit_write","setfcap"],"bounding":["chown","dac_override","fowner","fsetid","kill","setgid","setuid","setpcap","net_bind_service","net_raw","sys_chroot","mknod","audit_write","setfcap"],"ambient":null}, "cwd": "/", "exe": "/usr/share/filebeat/bin/filebeat", "name": "filebeat", "pid": 25, "ppid": 23, "seccomp": {"mode":"filter","no_new_privs":true}, "start_time": "2020-07-05T00:20:19.800Z"}}}
+2020-07-05T00:20:20.068Z	INFO	instance/beat.go:298	Setup Beat: filebeat; Version: 7.6.2
+2020-07-05T00:20:20.069Z	INFO	[publisher]	pipeline/module.go:110	Beat name: bd0c7fbb292d
+2020-07-05T00:20:20.070Z	WARN	beater/filebeat.go:152	Filebeat is unable to load the Ingest Node pipelines for the configured modules because the Elasticsearch output is not configured/enabled. If you have already loaded the Ingest Node pipelines or are using Logstash pipelines, you can ignore this warning.
+2020-07-05T00:20:20.072Z	INFO	instance/beat.go:439	filebeat start running.
+2020-07-05T00:20:20.073Z	INFO	registrar/migrate.go:104	No registry home found. Create: /var/lib/filebeat/registry/filebeat
+2020-07-05T00:20:20.073Z	INFO	registrar/migrate.go:112	Initialize registry meta file
+2020-07-05T00:20:20.074Z	INFO	[monitoring]	log/log.go:118	Starting metrics logging every 30s
+2020-07-05T00:20:20.075Z	INFO	registrar/registrar.go:108	No registry file found under: /var/lib/filebeat/registry/filebeat/data.json. Creating a new registry file.
+2020-07-05T00:20:20.077Z	INFO	registrar/registrar.go:145	Loading registrar data from /var/lib/filebeat/registry/filebeat/data.json
+2020-07-05T00:20:20.078Z	INFO	registrar/registrar.go:152	States Loaded from registrar: 0
+2020-07-05T00:20:20.078Z	WARN	beater/filebeat.go:368	Filebeat is unable to load the Ingest Node pipelines for the configured modules because the Elasticsearch output is not configured/enabled. If you have already loaded the Ingest Node pipelines or are using Logstash pipelines, you can ignore this warning.
+2020-07-05T00:20:20.078Z	INFO	crawler/crawler.go:72	Loading Inputs: 2
+2020-07-05T00:20:20.079Z	INFO	log/input.go:152	Configured paths: [/var/log/syslog /var/log/auth.log]
+2020-07-05T00:20:20.079Z	INFO	input/input.go:114	Starting input of type: log; ID: 5371234452296839711 
+2020-07-05T00:20:20.080Z	INFO	log/input.go:152	Configured paths: [/var/log/nginx/*.log]
+2020-07-05T00:20:20.080Z	INFO	input/input.go:114	Starting input of type: log; ID: 7772200441157874004 
+2020-07-05T00:20:20.080Z	INFO	crawler/crawler.go:106	Loading and starting Inputs completed. Enabled inputs: 2
+2020-07-05T00:20:20.086Z	INFO	log/harvester.go:297	Harvester started for file: /var/log/nginx/access.log
+2020-07-05T00:20:20.086Z	INFO	log/harvester.go:297	Harvester started for file: /var/log/nginx/error.log
+2020-07-05T00:20:21.088Z	INFO	pipeline/output.go:95	Connecting to kafka(kafka:19092)
+2020-07-05T00:20:21.089Z	INFO	kafka/log.go:53	kafka message: Initializing new client
+2020-07-05T00:20:21.090Z	INFO	kafka/log.go:53	kafka message: Successfully initialized new client
+2020-07-05T00:20:21.091Z	INFO	pipeline/output.go:105	Connection to kafka(kafka:19092) established
+2020-07-05T00:20:21.094Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:21.099Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp 172.20.0.5:19092: connect: connection refused
+
+2020-07-05T00:20:21.100Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp 172.20.0.5:19092: connect: connection refused
+
+2020-07-05T00:20:21.100Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:21.100Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:21.101Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (3 attempts remaining)
+
+2020-07-05T00:20:21.351Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:21.353Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp 172.20.0.5:19092: connect: connection refused
+
+2020-07-05T00:20:21.353Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp 172.20.0.5:19092: connect: connection refused
+
+2020-07-05T00:20:21.354Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:21.355Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:21.356Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (2 attempts remaining)
+
+2020-07-05T00:20:21.607Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:21.608Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp 172.20.0.5:19092: connect: connection refused
+
+2020-07-05T00:20:21.610Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp 172.20.0.5:19092: connect: connection refused
+
+2020-07-05T00:20:21.610Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:21.610Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:21.611Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (1 attempts remaining)
+
+2020-07-05T00:20:21.864Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:21.865Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp 172.20.0.5:19092: connect: connection refused
+
+2020-07-05T00:20:21.865Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp 172.20.0.5:19092: connect: connection refused
+
+2020-07-05T00:20:21.865Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:21.865Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:21.866Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:21.867Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp 172.20.0.5:19092: connect: connection refused
+
+2020-07-05T00:20:21.867Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp 172.20.0.5:19092: connect: connection refused
+
+2020-07-05T00:20:21.867Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:21.868Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:21.868Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (3 attempts remaining)
+
+2020-07-05T00:20:22.119Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:22.119Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp 172.20.0.5:19092: connect: connection refused
+
+2020-07-05T00:20:22.121Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp 172.20.0.5:19092: connect: connection refused
+
+2020-07-05T00:20:22.122Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:22.125Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:22.126Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (2 attempts remaining)
+
+2020-07-05T00:20:22.377Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:22.379Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:22.380Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:22.380Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:22.380Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:22.381Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (1 attempts remaining)
+
+2020-07-05T00:20:22.631Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:22.633Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:22.634Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:22.634Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:22.635Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:22.635Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:22.637Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:22.638Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:22.638Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:22.638Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:22.639Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (3 attempts remaining)
+
+2020-07-05T00:20:22.890Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:22.892Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:22.893Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:22.894Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:22.894Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:22.895Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (2 attempts remaining)
+
+2020-07-05T00:20:23.145Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:23.147Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:23.148Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:23.148Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:23.148Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:23.148Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (1 attempts remaining)
+
+2020-07-05T00:20:23.399Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:23.401Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:23.402Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:23.402Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:23.403Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:33.404Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:33.406Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:33.407Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:33.409Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:33.410Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:33.410Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (3 attempts remaining)
+
+2020-07-05T00:20:33.661Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:33.664Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:33.665Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:33.665Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:33.666Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:33.666Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (2 attempts remaining)
+
+2020-07-05T00:20:33.917Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:33.919Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:33.920Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:33.920Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:33.920Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:33.921Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (1 attempts remaining)
+
+2020-07-05T00:20:34.171Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:34.174Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:34.175Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:34.175Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:34.175Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:44.176Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:44.179Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:44.179Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:44.179Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:44.180Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:44.180Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (3 attempts remaining)
+
+2020-07-05T00:20:44.431Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:44.434Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:44.435Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:44.435Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:44.435Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:44.435Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (2 attempts remaining)
+
+2020-07-05T00:20:44.686Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:44.689Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:44.690Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:44.690Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:44.690Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:44.691Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (1 attempts remaining)
+
+2020-07-05T00:20:44.941Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:44.944Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:44.944Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:44.945Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:44.945Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:50.089Z	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":920,"time":{"ms":921}},"total":{"ticks":13810,"time":{"ms":13818},"value":13810},"user":{"ticks":12890,"time":{"ms":12897}}},"handles":{"limit":{"hard":1048576,"soft":1048576},"open":6},"info":{"ephemeral_id":"fa333687-e8c5-4f47-b24d-706d0196f4a9","uptime":{"ms":30128}},"memstats":{"gc_next":10501248,"memory_alloc":5271328,"memory_total":2098262240,"rss":56307712},"runtime":{"goroutines":43}},"filebeat":{"events":{"active":276,"added":278,"done":2},"harvester":{"files":{"05dab151-9d4f-4f23-bd83-b4fe4f04adb6":{"last_event_published_time":"2020-07-05T00:20:20.088Z","last_event_timestamp":"2020-07-05T00:20:20.088Z","name":"/var/log/nginx/error.log","read_offset":406,"size":406,"start_time":"2020-07-05T00:20:20.086Z"},"16e4a705-6a3b-409d-a24d-d85dd84f55e5":{"last_event_published_time":"2020-07-05T00:20:20.099Z","last_event_timestamp":"2020-07-05T00:20:20.099Z","name":"/var/log/nginx/access.log","read_offset":59027,"size":59027,"start_time":"2020-07-05T00:20:20.085Z"}},"open_files":2,"running":2,"started":2}},"libbeat":{"config":{"module":{"running":0}},"output":{"events":{"active":276,"batches":4034,"failed":1113108,"total":1113384},"type":"kafka"},"pipeline":{"clients":2,"events":{"active":276,"filtered":2,"published":276,"retry":1113384,"total":278}}},"registrar":{"states":{"current":2,"update":2},"writes":{"success":3,"total":3}},"system":{"cpu":{"cores":3},"load":{"1":4.31,"15":0.38,"5":1.12,"norm":{"1":1.4367,"15":0.1267,"5":0.3733}}}}}}
+2020-07-05T00:20:54.950Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:54.953Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:54.954Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:54.957Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:54.958Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:54.959Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (3 attempts remaining)
+
+2020-07-05T00:20:55.210Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:55.213Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:55.214Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:55.214Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:55.215Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:55.215Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (2 attempts remaining)
+
+2020-07-05T00:20:55.466Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:55.470Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:55.471Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:55.471Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:55.471Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T00:20:55.472Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (1 attempts remaining)
+
+2020-07-05T00:20:55.722Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T00:20:55.725Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:55.726Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp: lookup kafka on 127.0.0.11:53: no such host
+
+2020-07-05T00:20:55.726Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T00:20:55.726Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers

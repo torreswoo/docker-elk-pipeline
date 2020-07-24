@@ -1,0 +1,195 @@
+2020-07-05T06:56:20.214Z	INFO	instance/beat.go:622	Home path: [/usr/share/filebeat] Config path: [/etc/filebeat] Data path: [/var/lib/filebeat] Logs path: [/var/log/filebeat]
+2020-07-05T06:56:20.263Z	INFO	instance/beat.go:630	Beat ID: 7b4546f3-bbf3-4402-b8a3-1f6fe4b25398
+2020-07-05T06:56:20.264Z	INFO	[seccomp]	seccomp/seccomp.go:124	Syscall filter successfully installed
+2020-07-05T06:56:20.264Z	INFO	[beat]	instance/beat.go:958	Beat info	{"system_info": {"beat": {"path": {"config": "/etc/filebeat", "data": "/var/lib/filebeat", "home": "/usr/share/filebeat", "logs": "/var/log/filebeat"}, "type": "filebeat", "uuid": "7b4546f3-bbf3-4402-b8a3-1f6fe4b25398"}}}
+2020-07-05T06:56:20.264Z	INFO	[beat]	instance/beat.go:967	Build info	{"system_info": {"build": {"commit": "d57bcf8684602e15000d65b75afcd110e2b12b59", "libbeat": "7.6.2", "time": "2020-03-26T05:23:38.000Z", "version": "7.6.2"}}}
+2020-07-05T06:56:20.265Z	INFO	[beat]	instance/beat.go:970	Go runtime info	{"system_info": {"go": {"os":"linux","arch":"amd64","max_procs":3,"version":"go1.13.8"}}}
+2020-07-05T06:56:20.266Z	INFO	[beat]	instance/beat.go:974	Host info	{"system_info": {"host": {"architecture":"x86_64","boot_time":"2020-07-05T06:47:05Z","containerized":true,"name":"e1cb759cc92f","ip":["127.0.0.1/8","172.20.0.8/16"],"kernel_version":"4.19.76-linuxkit","mac":["02:42:ac:14:00:08"],"os":{"family":"debian","platform":"debian","name":"Debian GNU/Linux","version":"10 (buster)","major":10,"minor":0,"patch":0,"codename":"buster"},"timezone":"UTC","timezone_offset_sec":0,"id":"912980eb96a071f7ab313eb6a5e5b2e7"}}}
+2020-07-05T06:56:20.270Z	INFO	[beat]	instance/beat.go:1003	Process info	{"system_info": {"process": {"capabilities": {"inheritable":["chown","dac_override","fowner","fsetid","kill","setgid","setuid","setpcap","net_bind_service","net_raw","sys_chroot","mknod","audit_write","setfcap"],"permitted":["chown","dac_override","fowner","fsetid","kill","setgid","setuid","setpcap","net_bind_service","net_raw","sys_chroot","mknod","audit_write","setfcap"],"effective":["chown","dac_override","fowner","fsetid","kill","setgid","setuid","setpcap","net_bind_service","net_raw","sys_chroot","mknod","audit_write","setfcap"],"bounding":["chown","dac_override","fowner","fsetid","kill","setgid","setuid","setpcap","net_bind_service","net_raw","sys_chroot","mknod","audit_write","setfcap"],"ambient":null}, "cwd": "/", "exe": "/usr/share/filebeat/bin/filebeat", "name": "filebeat", "pid": 25, "ppid": 24, "seccomp": {"mode":"filter","no_new_privs":true}, "start_time": "2020-07-05T06:56:19.890Z"}}}
+2020-07-05T06:56:20.272Z	INFO	instance/beat.go:298	Setup Beat: filebeat; Version: 7.6.2
+2020-07-05T06:56:20.272Z	INFO	[publisher]	pipeline/module.go:110	Beat name: e1cb759cc92f
+2020-07-05T06:56:20.273Z	WARN	beater/filebeat.go:152	Filebeat is unable to load the Ingest Node pipelines for the configured modules because the Elasticsearch output is not configured/enabled. If you have already loaded the Ingest Node pipelines or are using Logstash pipelines, you can ignore this warning.
+2020-07-05T06:56:20.274Z	INFO	[monitoring]	log/log.go:118	Starting metrics logging every 30s
+2020-07-05T06:56:20.274Z	INFO	instance/beat.go:439	filebeat start running.
+2020-07-05T06:56:20.274Z	INFO	registrar/migrate.go:104	No registry home found. Create: /var/lib/filebeat/registry/filebeat
+2020-07-05T06:56:20.275Z	INFO	registrar/migrate.go:112	Initialize registry meta file
+2020-07-05T06:56:20.277Z	INFO	registrar/registrar.go:108	No registry file found under: /var/lib/filebeat/registry/filebeat/data.json. Creating a new registry file.
+2020-07-05T06:56:20.279Z	INFO	registrar/registrar.go:145	Loading registrar data from /var/lib/filebeat/registry/filebeat/data.json
+2020-07-05T06:56:20.280Z	INFO	registrar/registrar.go:152	States Loaded from registrar: 0
+2020-07-05T06:56:20.280Z	WARN	beater/filebeat.go:368	Filebeat is unable to load the Ingest Node pipelines for the configured modules because the Elasticsearch output is not configured/enabled. If you have already loaded the Ingest Node pipelines or are using Logstash pipelines, you can ignore this warning.
+2020-07-05T06:56:20.280Z	INFO	crawler/crawler.go:72	Loading Inputs: 2
+2020-07-05T06:56:20.281Z	INFO	log/input.go:152	Configured paths: [/var/log/syslog /var/log/auth.log]
+2020-07-05T06:56:20.282Z	INFO	input/input.go:114	Starting input of type: log; ID: 5371234452296839711 
+2020-07-05T06:56:20.283Z	INFO	log/input.go:152	Configured paths: [/var/log/nginx/*.log]
+2020-07-05T06:56:20.283Z	INFO	input/input.go:114	Starting input of type: log; ID: 7772200441157874004 
+2020-07-05T06:56:20.283Z	INFO	crawler/crawler.go:106	Loading and starting Inputs completed. Enabled inputs: 2
+2020-07-05T06:56:20.288Z	INFO	log/harvester.go:297	Harvester started for file: /var/log/nginx/access.log
+2020-07-05T06:56:20.292Z	INFO	log/harvester.go:297	Harvester started for file: /var/log/nginx/error.log
+2020-07-05T06:56:21.295Z	INFO	pipeline/output.go:95	Connecting to kafka(kafka:19092)
+2020-07-05T06:56:21.296Z	INFO	kafka/log.go:53	kafka message: Initializing new client
+2020-07-05T06:56:21.299Z	INFO	kafka/log.go:53	kafka message: Successfully initialized new client
+2020-07-05T06:56:21.299Z	INFO	pipeline/output.go:105	Connection to kafka(kafka:19092) established
+2020-07-05T06:56:21.304Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T06:56:21.311Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:21.313Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:21.313Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T06:56:21.314Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T06:56:21.314Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (3 attempts remaining)
+
+2020-07-05T06:56:21.565Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T06:56:21.566Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:21.567Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:21.567Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T06:56:21.567Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T06:56:21.568Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (2 attempts remaining)
+
+2020-07-05T06:56:21.818Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T06:56:21.820Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:21.821Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:21.821Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T06:56:21.821Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T06:56:21.822Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (1 attempts remaining)
+
+2020-07-05T06:56:22.072Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T06:56:22.074Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:22.074Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:22.074Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T06:56:22.075Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T06:56:22.075Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T06:56:22.076Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:22.077Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:22.077Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T06:56:22.078Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T06:56:22.079Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (3 attempts remaining)
+
+2020-07-05T06:56:22.329Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T06:56:22.331Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:22.331Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:22.331Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T06:56:22.332Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T06:56:22.332Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (2 attempts remaining)
+
+2020-07-05T06:56:22.582Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T06:56:22.584Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:22.584Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:22.585Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T06:56:22.585Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T06:56:22.585Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (1 attempts remaining)
+
+2020-07-05T06:56:22.836Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T06:56:22.838Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:22.838Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:22.838Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T06:56:22.839Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T06:56:22.839Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T06:56:22.841Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:22.841Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:22.841Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T06:56:22.841Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T06:56:22.842Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (3 attempts remaining)
+
+2020-07-05T06:56:23.092Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T06:56:23.094Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:23.094Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:23.095Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T06:56:23.095Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T06:56:23.095Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (2 attempts remaining)
+
+2020-07-05T06:56:23.346Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T06:56:23.347Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:23.348Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:23.348Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T06:56:23.349Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T06:56:23.349Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (1 attempts remaining)
+
+2020-07-05T06:56:23.601Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T06:56:23.602Z	INFO	kafka/log.go:53	Failed to connect to broker kafka:19092: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:23.602Z	INFO	kafka/log.go:53	client/metadata got error from broker -1 while fetching metadata: dial tcp 172.20.0.4:19092: connect: connection refused
+
+2020-07-05T06:56:23.603Z	INFO	kafka/log.go:53	kafka message: client/metadata no available broker to send metadata request to
+2020-07-05T06:56:23.603Z	INFO	kafka/log.go:53	client/brokers resurrecting 1 dead seed brokers
+2020-07-05T06:56:33.605Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T06:56:33.608Z	INFO	kafka/log.go:53	Connected to broker at kafka:19092 (unregistered)
+
+2020-07-05T06:56:34.189Z	INFO	kafka/log.go:53	client/brokers registered new broker #1001 at kafka:19092
+2020-07-05T06:56:34.191Z	INFO	kafka/log.go:53	kafka message: client/metadata found some partitions to be leaderless
+2020-07-05T06:56:34.191Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (3 attempts remaining)
+
+2020-07-05T06:56:34.442Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T06:56:34.486Z	INFO	kafka/log.go:53	kafka message: client/metadata found some partitions to be leaderless
+2020-07-05T06:56:34.487Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (2 attempts remaining)
+
+2020-07-05T06:56:34.738Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T06:56:34.795Z	INFO	kafka/log.go:53	kafka message: client/metadata found some partitions to be leaderless
+2020-07-05T06:56:34.795Z	INFO	kafka/log.go:53	client/metadata retrying after 250ms... (1 attempts remaining)
+
+2020-07-05T06:56:35.046Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T06:56:35.102Z	INFO	kafka/log.go:53	kafka message: client/metadata found some partitions to be leaderless
+2020-07-05T06:56:45.104Z	INFO	kafka/log.go:53	client/metadata fetching metadata for [test-topic03] from broker kafka:19092
+
+2020-07-05T06:56:45.173Z	INFO	kafka/log.go:53	producer/broker/1001 starting up
+
+2020-07-05T06:56:45.174Z	INFO	kafka/log.go:53	producer/broker/1001 state change to [open] on test-topic03/0
+
+2020-07-05T06:56:45.177Z	INFO	kafka/log.go:53	Connected to broker at kafka:19092 (registered as #1001)
+
+2020-07-05T06:56:50.277Z	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":700,"time":{"ms":702}},"total":{"ticks":9190,"time":{"ms":9195},"value":9190},"user":{"ticks":8490,"time":{"ms":8493}}},"handles":{"limit":{"hard":1048576,"soft":1048576},"open":8},"info":{"ephemeral_id":"7266965e-be9a-4e27-b6c3-68d992978693","uptime":{"ms":30118}},"memstats":{"gc_next":11131472,"memory_alloc":6601232,"memory_total":1068043504,"rss":55619584},"runtime":{"goroutines":48}},"filebeat":{"events":{"added":295,"done":295},"harvester":{"files":{"a0733822-084f-4100-992a-8145283103c2":{"last_event_published_time":"2020-07-05T06:56:20.310Z","last_event_timestamp":"2020-07-05T06:56:20.310Z","name":"/var/log/nginx/access.log","read_offset":62682,"size":62682,"start_time":"2020-07-05T06:56:20.288Z"},"bdef776b-f107-4259-9022-0a3f7268de67":{"last_event_published_time":"2020-07-05T06:56:20.295Z","last_event_timestamp":"2020-07-05T06:56:20.295Z","name":"/var/log/nginx/error.log","read_offset":406,"size":406,"start_time":"2020-07-05T06:56:20.290Z"}},"open_files":2,"running":2,"started":2}},"libbeat":{"config":{"module":{"running":0}},"output":{"events":{"acked":293,"batches":1934,"failed":566265,"total":566558},"type":"kafka"},"outputs":{"kafka":{"bytes_read":684,"bytes_write":10684}},"pipeline":{"clients":2,"events":{"active":0,"filtered":2,"published":293,"retry":566558,"total":295},"queue":{"acked":293}}},"registrar":{"states":{"current":2,"update":295},"writes":{"success":4,"total":4}},"system":{"cpu":{"cores":3},"load":{"1":5.71,"15":1.12,"5":2.16,"norm":{"1":1.9033,"15":0.3733,"5":0.72}}}}}}
+2020-07-05T06:57:20.281Z	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":710,"time":{"ms":10}},"total":{"ticks":9210,"time":{"ms":21},"value":9210},"user":{"ticks":8500,"time":{"ms":11}}},"handles":{"limit":{"hard":1048576,"soft":1048576},"open":8},"info":{"ephemeral_id":"7266965e-be9a-4e27-b6c3-68d992978693","uptime":{"ms":60119}},"memstats":{"gc_next":11131472,"memory_alloc":7064576,"memory_total":1068506848},"runtime":{"goroutines":48}},"filebeat":{"harvester":{"open_files":2,"running":2}},"libbeat":{"config":{"module":{"running":0}},"pipeline":{"clients":2,"events":{"active":0}}},"registrar":{"states":{"current":2}},"system":{"load":{"1":6.53,"15":1.33,"5":2.69,"norm":{"1":2.1767,"15":0.4433,"5":0.8967}}}}}}
+2020-07-05T06:57:50.279Z	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":720,"time":{"ms":10}},"total":{"ticks":9230,"time":{"ms":20},"value":9230},"user":{"ticks":8510,"time":{"ms":10}}},"handles":{"limit":{"hard":1048576,"soft":1048576},"open":8},"info":{"ephemeral_id":"7266965e-be9a-4e27-b6c3-68d992978693","uptime":{"ms":90119}},"memstats":{"gc_next":11131472,"memory_alloc":7394704,"memory_total":1068836976,"rss":-757760},"runtime":{"goroutines":48}},"filebeat":{"harvester":{"open_files":2,"running":2}},"libbeat":{"config":{"module":{"running":0}},"pipeline":{"clients":2,"events":{"active":0}}},"registrar":{"states":{"current":2}},"system":{"load":{"1":5.05,"15":1.39,"5":2.73,"norm":{"1":1.6833,"15":0.4633,"5":0.91}}}}}}
+2020-07-05T06:58:20.276Z	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":730,"time":{"ms":10}},"total":{"ticks":9250,"time":{"ms":23},"value":9250},"user":{"ticks":8520,"time":{"ms":13}}},"handles":{"limit":{"hard":1048576,"soft":1048576},"open":8},"info":{"ephemeral_id":"7266965e-be9a-4e27-b6c3-68d992978693","uptime":{"ms":120117}},"memstats":{"gc_next":11131472,"memory_alloc":8785480,"memory_total":1070227752},"runtime":{"goroutines":48}},"filebeat":{"events":{"added":2,"done":2},"harvester":{"files":{"a0733822-084f-4100-992a-8145283103c2":{"last_event_published_time":"2020-07-05T06:58:15.371Z","last_event_timestamp":"2020-07-05T06:58:15.371Z","read_offset":432}},"open_files":2,"running":2}},"libbeat":{"config":{"module":{"running":0}},"output":{"events":{"acked":2,"batches":1,"total":2}},"outputs":{"kafka":{"bytes_read":56,"bytes_write":656}},"pipeline":{"clients":2,"events":{"active":0,"published":2,"total":2},"queue":{"acked":2}}},"registrar":{"states":{"current":2,"update":2},"writes":{"success":1,"total":1}},"system":{"load":{"1":3.45,"15":1.37,"5":2.55,"norm":{"1":1.15,"15":0.4567,"5":0.85}}}}}}
+2020-07-05T06:58:50.329Z	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":790,"time":{"ms":59}},"total":{"ticks":9360,"time":{"ms":109},"value":9360},"user":{"ticks":8570,"time":{"ms":50}}},"handles":{"limit":{"hard":1048576,"soft":1048576},"open":8},"info":{"ephemeral_id":"7266965e-be9a-4e27-b6c3-68d992978693","uptime":{"ms":150117}},"memstats":{"gc_next":9200992,"memory_alloc":4600592,"memory_total":1070488304},"runtime":{"goroutines":48}},"filebeat":{"harvester":{"files":{"a0733822-084f-4100-992a-8145283103c2":{"size":432}},"open_files":2,"running":2}},"libbeat":{"config":{"module":{"running":0}},"pipeline":{"clients":2,"events":{"active":0}}},"registrar":{"states":{"current":2}},"system":{"load":{"1":2.3,"15":1.34,"5":2.35,"norm":{"1":0.7667,"15":0.4467,"5":0.7833}}}}}}
+2020-07-05T06:59:20.328Z	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":790,"time":{"ms":7}},"total":{"ticks":9380,"time":{"ms":22},"value":9380},"user":{"ticks":8590,"time":{"ms":15}}},"handles":{"limit":{"hard":1048576,"soft":1048576},"open":8},"info":{"ephemeral_id":"7266965e-be9a-4e27-b6c3-68d992978693","uptime":{"ms":180119}},"memstats":{"gc_next":9200992,"memory_alloc":4949544,"memory_total":1070837256},"runtime":{"goroutines":48}},"filebeat":{"harvester":{"open_files":2,"running":2}},"libbeat":{"config":{"module":{"running":0}},"pipeline":{"clients":2,"events":{"active":0}}},"registrar":{"states":{"current":2}},"system":{"load":{"1":1.45,"15":1.3,"5":2.14,"norm":{"1":0.4833,"15":0.4333,"5":0.7133}}}}}}
+2020-07-05T06:59:50.328Z	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":810,"time":{"ms":15}},"total":{"ticks":9410,"time":{"ms":27},"value":9410},"user":{"ticks":8600,"time":{"ms":12}}},"handles":{"limit":{"hard":1048576,"soft":1048576},"open":8},"info":{"ephemeral_id":"7266965e-be9a-4e27-b6c3-68d992978693","uptime":{"ms":210118}},"memstats":{"gc_next":9200992,"memory_alloc":5371120,"memory_total":1071258832},"runtime":{"goroutines":48}},"filebeat":{"harvester":{"open_files":2,"running":2}},"libbeat":{"config":{"module":{"running":0}},"pipeline":{"clients":2,"events":{"active":0}}},"registrar":{"states":{"current":2}},"system":{"load":{"1":1.09,"15":1.28,"5":1.98,"norm":{"1":0.3633,"15":0.4267,"5":0.66}}}}}}
+2020-07-05T07:00:20.329Z	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":820,"time":{"ms":11}},"total":{"ticks":9430,"time":{"ms":26},"value":9430},"user":{"ticks":8610,"time":{"ms":15}}},"handles":{"limit":{"hard":1048576,"soft":1048576},"open":8},"info":{"ephemeral_id":"7266965e-be9a-4e27-b6c3-68d992978693","uptime":{"ms":240118}},"memstats":{"gc_next":9200992,"memory_alloc":7495568,"memory_total":1073383280},"runtime":{"goroutines":48}},"filebeat":{"events":{"added":2,"done":2},"harvester":{"files":{"a0733822-084f-4100-992a-8145283103c2":{"last_event_published_time":"2020-07-05T07:00:10.487Z","last_event_timestamp":"2020-07-05T07:00:10.486Z","read_offset":432}},"open_files":2,"running":2}},"libbeat":{"config":{"module":{"running":0}},"output":{"events":{"acked":2,"batches":1,"total":2}},"outputs":{"kafka":{"bytes_read":112,"bytes_write":1196}},"pipeline":{"clients":2,"events":{"active":0,"published":2,"total":2},"queue":{"acked":2}}},"registrar":{"states":{"current":2,"update":2},"writes":{"success":1,"total":1}},"system":{"load":{"1":0.72,"15":1.24,"5":1.81,"norm":{"1":0.24,"15":0.4133,"5":0.6033}}}}}}
+2020-07-05T07:00:50.329Z	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":830,"time":{"ms":12}},"total":{"ticks":9460,"time":{"ms":28},"value":9460},"user":{"ticks":8630,"time":{"ms":16}}},"handles":{"limit":{"hard":1048576,"soft":1048576},"open":8},"info":{"ephemeral_id":"7266965e-be9a-4e27-b6c3-68d992978693","uptime":{"ms":270118}},"memstats":{"gc_next":9127584,"memory_alloc":4654688,"memory_total":1073810432},"runtime":{"goroutines":48}},"filebeat":{"harvester":{"files":{"a0733822-084f-4100-992a-8145283103c2":{"size":432}},"open_files":2,"running":2}},"libbeat":{"config":{"module":{"running":0}},"pipeline":{"clients":2,"events":{"active":0}}},"registrar":{"states":{"current":2}},"system":{"load":{"1":0.9,"15":1.24,"5":1.75,"norm":{"1":0.3,"15":0.4133,"5":0.5833}}}}}}
+2020-07-05T07:01:20.328Z	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":840,"time":{"ms":11}},"total":{"ticks":9480,"time":{"ms":24},"value":9480},"user":{"ticks":8640,"time":{"ms":13}}},"handles":{"limit":{"hard":1048576,"soft":1048576},"open":8},"info":{"ephemeral_id":"7266965e-be9a-4e27-b6c3-68d992978693","uptime":{"ms":300116}},"memstats":{"gc_next":9127584,"memory_alloc":4916632,"memory_total":1074072376},"runtime":{"goroutines":48}},"filebeat":{"harvester":{"open_files":2,"running":2}},"libbeat":{"config":{"module":{"running":0}},"pipeline":{"clients":2,"events":{"active":0}}},"registrar":{"states":{"current":2}},"system":{"load":{"1":0.54,"15":1.2,"5":1.58,"norm":{"1":0.18,"15":0.4,"5":0.5267}}}}}}
+2020-07-05T07:01:25.507Z	INFO	log/harvester.go:324	File is inactive: /var/log/nginx/error.log. Closing because close_inactive of 5m0s reached.
+2020-07-05T07:01:50.328Z	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":850,"time":{"ms":8}},"total":{"ticks":9510,"time":{"ms":21},"value":9510},"user":{"ticks":8660,"time":{"ms":13}}},"handles":{"limit":{"hard":1048576,"soft":1048576},"open":7},"info":{"ephemeral_id":"7266965e-be9a-4e27-b6c3-68d992978693","uptime":{"ms":330116}},"memstats":{"gc_next":9127584,"memory_alloc":5260536,"memory_total":1074416280},"runtime":{"goroutines":43}},"filebeat":{"events":{"added":1,"done":1},"harvester":{"closed":1,"open_files":1,"running":1}},"libbeat":{"config":{"module":{"running":0}},"pipeline":{"clients":2,"events":{"active":0,"filtered":1,"total":1}}},"registrar":{"states":{"current":2,"update":1},"writes":{"success":1,"total":1}},"system":{"load":{"1":0.39,"15":1.16,"5":1.44,"norm":{"1":0.13,"15":0.3867,"5":0.48}}}}}}
+2020-07-05T07:02:20.328Z	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":860,"time":{"ms":12}},"total":{"ticks":9530,"time":{"ms":23},"value":9530},"user":{"ticks":8670,"time":{"ms":11}}},"handles":{"limit":{"hard":1048576,"soft":1048576},"open":7},"info":{"ephemeral_id":"7266965e-be9a-4e27-b6c3-68d992978693","uptime":{"ms":360117}},"memstats":{"gc_next":9127584,"memory_alloc":5770024,"memory_total":1074925768},"runtime":{"goroutines":43}},"filebeat":{"harvester":{"open_files":1,"running":1}},"libbeat":{"config":{"module":{"running":0}},"pipeline":{"clients":2,"events":{"active":0}}},"registrar":{"states":{"current":2}},"system":{"load":{"1":0.24,"15":1.12,"5":1.3,"norm":{"1":0.08,"15":0.3733,"5":0.4333}}}}}}
+2020-07-05T07:02:50.329Z	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":870,"time":{"ms":13}},"total":{"ticks":9570,"time":{"ms":46},"value":9570},"user":{"ticks":8700,"time":{"ms":33}}},"handles":{"limit":{"hard":1048576,"soft":1048576},"open":7},"info":{"ephemeral_id":"7266965e-be9a-4e27-b6c3-68d992978693","uptime":{"ms":390116}},"memstats":{"gc_next":8984624,"memory_alloc":4499688,"memory_total":1075086136},"runtime":{"goroutines":43}},"filebeat":{"harvester":{"open_files":1,"running":1}},"libbeat":{"config":{"module":{"running":0}},"pipeline":{"clients":2,"events":{"active":0}}},"registrar":{"states":{"current":2}},"system":{"load":{"1":0.49,"15":1.11,"5":1.26,"norm":{"1":0.1633,"15":0.37,"5":0.42}}}}}}
+2020-07-05T07:03:20.329Z	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":890,"time":{"ms":19}},"total":{"ticks":9650,"time":{"ms":77},"value":9650},"user":{"ticks":8760,"time":{"ms":58}}},"handles":{"limit":{"hard":1048576,"soft":1048576},"open":7},"info":{"ephemeral_id":"7266965e-be9a-4e27-b6c3-68d992978693","uptime":{"ms":420117}},"memstats":{"gc_next":8984624,"memory_alloc":4836368,"memory_total":1075422816},"runtime":{"goroutines":43}},"filebeat":{"harvester":{"open_files":1,"running":1}},"libbeat":{"config":{"module":{"running":0}},"pipeline":{"clients":2,"events":{"active":0}}},"registrar":{"states":{"current":2}},"system":{"load":{"1":0.47,"15":1.09,"5":1.18,"norm":{"1":0.1567,"15":0.3633,"5":0.3933}}}}}}
+2020-07-05T07:03:50.329Z	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":900,"time":{"ms":10}},"total":{"ticks":9670,"time":{"ms":19},"value":9670},"user":{"ticks":8770,"time":{"ms":9}}},"handles":{"limit":{"hard":1048576,"soft":1048576},"open":7},"info":{"ephemeral_id":"7266965e-be9a-4e27-b6c3-68d992978693","uptime":{"ms":450116}},"memstats":{"gc_next":8984624,"memory_alloc":5161744,"memory_total":1075748192},"runtime":{"goroutines":43}},"filebeat":{"harvester":{"open_files":1,"running":1}},"libbeat":{"config":{"module":{"running":0}},"pipeline":{"clients":2,"events":{"active":0}}},"registrar":{"states":{"current":2}},"system":{"load":{"1":0.36,"15":1.06,"5":1.09,"norm":{"1":0.12,"15":0.3533,"5":0.3633}}}}}}
+2020-07-05T07:04:20.329Z	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":920,"time":{"ms":11}},"total":{"ticks":9700,"time":{"ms":23},"value":9700},"user":{"ticks":8780,"time":{"ms":12}}},"handles":{"limit":{"hard":1048576,"soft":1048576},"open":7},"info":{"ephemeral_id":"7266965e-be9a-4e27-b6c3-68d992978693","uptime":{"ms":480117}},"memstats":{"gc_next":8984624,"memory_alloc":5584520,"memory_total":1076170968},"runtime":{"goroutines":43}},"filebeat":{"harvester":{"open_files":1,"running":1}},"libbeat":{"config":{"module":{"running":0}},"pipeline":{"clients":2,"events":{"active":0}}},"registrar":{"states":{"current":2}},"system":{"load":{"1":0.29,"15":1.03,"5":1,"norm":{"1":0.0967,"15":0.3433,"5":0.3333}}}}}}
+2020-07-05T07:04:50.329Z	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":930,"time":{"ms":12}},"total":{"ticks":9730,"time":{"ms":30},"value":9730},"user":{"ticks":8800,"time":{"ms":18}}},"handles":{"limit":{"hard":1048576,"soft":1048576},"open":7},"info":{"ephemeral_id":"7266965e-be9a-4e27-b6c3-68d992978693","uptime":{"ms":510116}},"memstats":{"gc_next":8984624,"memory_alloc":4499480,"memory_total":1076420384},"runtime":{"goroutines":43}},"filebeat":{"harvester":{"open_files":1,"running":1}},"libbeat":{"config":{"module":{"running":0}},"pipeline":{"clients":2,"events":{"active":0}}},"registrar":{"states":{"current":2}},"system":{"load":{"1":0.54,"15":1.03,"5":0.98,"norm":{"1":0.18,"15":0.3433,"5":0.3267}}}}}}
+2020-07-05T07:05:15.638Z	INFO	log/harvester.go:324	File is inactive: /var/log/nginx/access.log. Closing because close_inactive of 5m0s reached.
+2020-07-05T07:05:20.330Z	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":930,"time":{"ms":6}},"total":{"ticks":9740,"time":{"ms":22},"value":9740},"user":{"ticks":8810,"time":{"ms":16}}},"handles":{"limit":{"hard":1048576,"soft":1048576},"open":6},"info":{"ephemeral_id":"7266965e-be9a-4e27-b6c3-68d992978693","uptime":{"ms":540116}},"memstats":{"gc_next":8984624,"memory_alloc":4829392,"memory_total":1076750296},"runtime":{"goroutines":38}},"filebeat":{"events":{"added":1,"done":1},"harvester":{"closed":1,"open_files":0,"running":0}},"libbeat":{"config":{"module":{"running":0}},"pipeline":{"clients":2,"events":{"active":0,"filtered":1,"total":1}}},"registrar":{"states":{"current":2,"update":1},"writes":{"success":1,"total":1}},"system":{"load":{"1":0.44,"15":1,"5":0.92,"norm":{"1":0.1467,"15":0.3333,"5":0.3067}}}}}}
+2020-07-05T07:05:50.330Z	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":940,"time":{"ms":6}},"total":{"ticks":9770,"time":{"ms":20},"value":9770},"user":{"ticks":8830,"time":{"ms":14}}},"handles":{"limit":{"hard":1048576,"soft":1048576},"open":6},"info":{"ephemeral_id":"7266965e-be9a-4e27-b6c3-68d992978693","uptime":{"ms":570116}},"memstats":{"gc_next":8984624,"memory_alloc":5169360,"memory_total":1077090264},"runtime":{"goroutines":38}},"filebeat":{"harvester":{"open_files":0,"running":0}},"libbeat":{"config":{"module":{"running":0}},"pipeline":{"clients":2,"events":{"active":0}}},"registrar":{"states":{"current":2}},"system":{"load":{"1":0.32,"15":0.97,"5":0.85,"norm":{"1":0.1067,"15":0.3233,"5":0.2833}}}}}}

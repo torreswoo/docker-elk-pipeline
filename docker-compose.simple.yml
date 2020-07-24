@@ -1,0 +1,36 @@
+version: '3.2'
+
+services:
+  elasticsearch:
+    image: elasticsearch:${ELK_VERSION}
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - cluster.name=es-simple
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - network.host=0.0.0.0
+      - discovery.type=single-node
+      - xpack.monitoring.collection.enabled=true
+    networks:
+      - elk
+
+  kibana:
+    image: kibana:${ELK_VERSION}
+    ports:
+      - "5601:5601"
+    environment:
+      - server.name=kibana
+      - server.host="0"
+      - elasticsearch.hosts=elasticsearch:9200
+      - monitoring.ui.container.elasticsearch.enabled=true
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+
+
+networks:
+  elk:
+    driver: bridge
+
