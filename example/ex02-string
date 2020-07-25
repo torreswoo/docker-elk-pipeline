@@ -1,0 +1,45 @@
+# Data Type - string
+# 01. make template
+PUT _template/test_template
+{
+  "index_patterns": [
+    "test_index"
+  ],
+  "mappings": {
+    "properties": {
+      "book_name01": {
+        "type": "keyword"
+      },
+      "book_name02": {
+        "type": "text"
+      }
+    }
+  }
+}
+
+# 02. put document
+POST test_index/_doc
+{
+  "book_name01": " 검색엔진 완전 정복",
+  "book_name02": " 검색엔진 완전 정복"
+}
+
+# 03. search "book_name01"
+GET /test_index/_search
+{
+  "query": {
+    "term": {
+      "book_name01": "완전"
+    }
+  }
+}
+
+# 04. search "book_name02"
+GET /test_index/_search
+{
+  "query": {
+    "term": {
+      "book_name02": "완전"
+    }
+  }
+}

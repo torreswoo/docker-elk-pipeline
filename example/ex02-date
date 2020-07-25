@@ -1,0 +1,28 @@
+# Data Type - date
+# 01. make mapping
+PUT my_index_date
+{
+  "mappings": {
+    "properties": {
+      "date": {
+        "type": "date" 
+      }
+    }
+  }
+}
+
+# 02. put document
+PUT my_index_date/_doc/1
+{ "date": "2015-01-01" } 
+
+PUT my_index_date/_doc/2
+{ "date": "2015-01-01T12:10:30Z" } 
+
+PUT my_index_date/_doc/3
+{ "date": 1420070400001 } 
+
+# 03. search document
+GET my_index_date/_search
+{
+  "sort": { "date": "asc"} 
+}

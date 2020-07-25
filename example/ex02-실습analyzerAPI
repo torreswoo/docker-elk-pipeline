@@ -1,0 +1,5 @@
+POST _analyze
+{
+  "analyzer": "standard",
+  "text": "우리나라 좋은나라, 대한민국 화이팅"
+}

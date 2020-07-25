@@ -1,0 +1,74 @@
+
+# 01. index create & delete
+PUT test_index
+DELETE test_index
+
+# 02. check index information
+GET /_cat/templates?v 
+GET /_cat/indices?v 
+GET /test_index/_stats 
+GET /test_index/_settings 
+GET /test_index/_mapping
+
+# 03. make mapping
+PUT _template/test_template_mapping_api
+{
+  "index_patterns": [
+    "test_index_mapping_api"
+  ],
+  "mappings": {
+    "properties": {
+      "book_name": {
+        "type": "keyword"
+      },
+      "description": {
+        "type": "text"
+      },
+      "price": {
+        "type": "integer"
+      },
+      "location": {
+        "type": "geo_point"
+      },
+      "order_time": {
+        "type": "date"
+      }
+    }
+  }
+}
+
+# 04. save document
+POST test_index_mapping_api/_doc
+{
+  "book_name": "검색엔진 완전 정복",
+  "description": "이 책은 검색엔진에 관현 책이며, 완전 정복 책으로 베스트 셀러 10위이다.",
+  "price": 25000,
+  "location": "41.12,-71.34",
+  "order_time": "2020-07-25T12:10:30Z"
+}
+
+# 05. search
+GET test_index_mapping_api/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+GET test_index_mapping_api/_search
+{
+  "query": {
+    "term": {
+      "book_name": "완전"
+    }
+  }
+}
+
+GET test_index_mapping_api/_search
+{
+  "query": {
+    "term": {
+      "description": "완전"
+    }
+  }
+}
