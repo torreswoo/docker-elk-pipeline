@@ -1,0 +1,51 @@
+version: '3.2'
+
+services:
+  elasticsearch:
+    image: elasticsearch:${ELK_VERSION}
+    # volumes:
+    #   - type: bind
+    #     source: ./elasticsearch/data
+    #     target: /usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - cluster.name=es-xpack
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - network.host=0.0.0.0
+      - discovery.type=single-node
+      - xpack.license.self_generated.type=basic  #basic
+      - xpack.monitoring.collection.enabled=true
+      - xpack.security.enabled=true
+      - "ELASTIC_PASSWORD=changeme"
+    networks:
+      - elk
+
+  kibana:
+    # image: kibana:${ELK_VERSION}
+    build:
+      context: kibana/
+      args:
+        ELK_VERSION: $ELK_VERSION
+    volumes:
+      - type: bind
+        source: ./kibana/config/kibana-xpack.yml
+        target: /usr/share/kibana/config/kibana.yml
+        read_only: true
+    ports:
+      - "5601:5601"
+    environment:
+      - server.name=kibana
+      - server.host="0"
+      - elasticsearch.hosts=elasticsearch:9200
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+
+
+networks:
+  elk:
+    driver: bridge
+
