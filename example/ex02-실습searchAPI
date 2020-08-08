@@ -1,0 +1,141 @@
+# 01. Match All Query
+GET /test_data/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+GET /test_data/_search
+{
+  "query": {
+    "match_all": {}
+  },
+  "sort": [
+    {
+      "customer_age": {
+        "order": "desc"
+      }
+    }
+  ]
+}
+
+GET /test_data/_search
+{
+  "query": {
+    "match_all": {}
+  },
+  "from": 0, 
+  "size": 100
+}
+
+
+# 02. Full Text Query
+# 02. Full Text Query -  match
+GET /test_data/_search
+{
+  "query": {
+    "match": {
+      "구매사이트": "G마켓"
+    }
+  }
+}
+
+# 02. Full Text Query - query-string
+GET /test_data/_search
+{
+  "query": {
+    "query_string": {
+      "query": "customer_age : [10 TO 25]"
+    }
+  }
+}
+
+# 03. Term Level Query
+# term
+GET /test_data/_search
+{
+  "query": {
+    "term": {
+      "product_분류": "셔츠"
+    }
+  }
+}
+# terms
+GET /test_data/_search
+{
+  "query": {
+    "terms": {
+      "product_분류": ["셔츠", "스웨터"]
+    }
+  }
+}
+
+# range
+GET /test_data/_search
+{
+  "query": {
+    "range": {
+      "order_주문시간": {
+        "gte": "2020-06-15",
+        "lte": "2020-06-20"
+      }
+    }
+  }
+}
+
+# prefix
+GET /test_data/_search
+{
+  "query": {
+    "prefix": {
+      "customer_address": "경상"
+    }
+  }
+}
+
+# wildcard - *, ?
+GET /test_data/_search
+{
+  "query": {
+    "wildcard": {
+      "customer_address": "경*도"
+    }
+  }
+}
+
+GET /test_data/_search
+{
+  "query": {
+    "wildcard": {
+      "customer_address": "경?도"
+    }
+  }
+}
+
+# fuzzy
+GET /test_data/_search
+{
+  "query": {
+    "fuzzy": {
+      "customer_address": "경상북남"
+    }
+  }
+}
+
+# 04. Compound Query
+GET /shopping/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        { "term": { "customer_address": "서울특별시" } }
+      ], 
+      "should": [
+        { "prefix": { "구매사이트" : "11" } },
+        { "range": { "customer_age": { "lt": 30 } } }
+      ],
+      "minimum_should_match": 1
+    }
+  }
+}
