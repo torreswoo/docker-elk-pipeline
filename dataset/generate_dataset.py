@@ -32,7 +32,6 @@ def setup_index():
   )
   print("mapping이 생성되었습니다")
 
-  #
   n = int(DATA_NUM)
 
   for i in range(1, n+1):
@@ -89,13 +88,9 @@ def setup_index():
     document = dict()
     document['order_id'] = order_id
     document['order_주문시간'] = date
-    # doc['order_배달시간'] = delivery_date
-    # doc['예약여부'] = reserve
-    # doc['customer_ip'] = ip
     document['customer_gender'] = sex
     document['customer_age'] = age
     document['customer_address'] = city
-    # doc['product_위치'] = loc
     document['product_분류'] = item
     document['product_가격'] = price
     document['product_개수'] = quantity
