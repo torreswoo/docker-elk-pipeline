@@ -6,8 +6,8 @@
 - http://localhost:8080/
 
 ```
-docker-compose -f docker-compose.project.filebeat.yml up
-docker-compose -f docker-compose.project.filebeat.yml up --force-recreate --build 
+docker-compose -f docker-compose.project.yml up
+docker-compose -f docker-compose.project.yml up --force-recreate --build 
 docker-compose up
 docker-compose ls
 docker ps

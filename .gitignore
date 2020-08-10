@@ -6,27 +6,3 @@ dataset/__pycache__
 
 beats/filebeat-nginx/log/
 
-# project 01
-project01/elasticsearch/data
-
-# project 02
-project02/elasticsearch/data
-
-# project 03
-project03/elasticsearch/data
-project03/beats/metricbeat-7.*
-
-# project 04
-project04/elasticsearch/data
-project04/beats/filebeat-7.*
-project04/beats/filebeat-nginx/log
-
-# project 05
-project05/elasticsearch/data
-
-# project 06
-project06/elasticsearch/data
-project06/beats/filebeat-7.*
-project06/beats/filebeat-project/log
-project06/kafka/kafka_2.12*
-project06/kafka/kafka-docker

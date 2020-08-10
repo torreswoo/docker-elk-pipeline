@@ -7,26 +7,26 @@ dataset/__pycache__
 beats/filebeat-nginx/log/
 
 # project 01
-project01/elasticsearch/data
+project01-logstash/elasticsearch/data
 
 # project 02
-project02/elasticsearch/data
+project02-logstash/elasticsearch/data
 
 # project 03
-project03/elasticsearch/data
-project03/beats/metricbeat-7.*
+project03-metricbeat/elasticsearch/data
+project03-metricbeat/beats/metricbeat-7.*
 
 # project 04
-project04/elasticsearch/data
-project04/beats/filebeat-7.*
-project04/beats/filebeat-nginx/log
+project04-filebeat/elasticsearch/data
+project04-filebeat/beats/filebeat-7.*
+project04-filebeat/beats/filebeat-nginx/log
 
 # project 05
-project05/elasticsearch/data
+project05-es-multi-cluster/elasticsearch/data
 
 # project 06
-project06/elasticsearch/data
-project06/beats/filebeat-7.*
-project06/beats/filebeat-project/log
-project06/kafka/kafka_2.12*
-project06/kafka/kafka-docker
+project06-kafka/elasticsearch/data
+project06-kafka/beats/filebeat-7.*
+project06-kafka/beats/filebeat-project/log
+project06-kafka/kafka/kafka_2.12*
+project06-kafka/kafka/kafka-docker
