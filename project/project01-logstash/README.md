@@ -26,8 +26,5 @@ curl -X POST 'http://127.0.0.1:5000' -d '{ "id" : 1, "order_number" : 12, "custo
 
 ```
 # pipeline/logstash.conf
-# pipeline/logstash02.conf
 curl -X POST 'http://127.0.0.1:5000' -d '{ "id" : 1, "order_number" : 12, "customer_no": 23781, "category": "셔츠"}'
-
-# pipeline/logstash02.conf
 ```
