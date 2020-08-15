@@ -21,3 +21,6 @@ curl -X POST 'http://127.0.0.1:5000' -d '{ "id" : 1, "order_number" : 12, "custo
 ## Logstash
 
 ### Logstash - File input plugin
+
+### Logstash Pattern
+- https://github.com/logstash-plugins/logstash-patterns-core/tree/master/patterns
