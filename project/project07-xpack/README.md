@@ -7,6 +7,7 @@
 - https://www.elastic.co/guide/kr/x-pack/current/xpack-introduction.html
 - https://www.elastic.co/kr/subscriptions 
 
+- id/pw : elastic/changeme
 
 ```
 $ curl -XGET -u elastic:changeme http://localhost:9200/_xpack/security/user?pretty

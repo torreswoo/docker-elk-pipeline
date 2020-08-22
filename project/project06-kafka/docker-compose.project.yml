@@ -1,4 +1,4 @@
-version: '2.2'
+version: '3.2'
 
 services:
   elasticsearch:
@@ -20,9 +20,6 @@ services:
       nofile:
         soft: 65536
         hard: 65536
-    mem_limit: 1g
-    volumes:
-      - ./elasticsearch/data:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
     networks:
@@ -34,8 +31,18 @@ services:
       args:
         ELK_VERSION: $ELK_VERSION
     volumes:
-      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
-      - ./logstash/pipeline/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+      - type: bind
+        source: ./logstash/config/logstash.yml
+        target: /usr/share/logstash/config/logstash.yml
+        read_only: true
+      - type: bind
+        source: ./logstash/pipeline/logstash.conf
+        target: /usr/share/logstash/pipeline/logstash.conf
+        read_only: true
+      - type: bind
+        source: ./logstash/pattern/nginx.pattern
+        target: /usr/share/logstash/pattern/nginx.pattern
+        read_only: true
     ports:
       - "5000:5000"
       - "5044:5044"
