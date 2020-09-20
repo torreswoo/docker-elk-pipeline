@@ -26,3 +26,4 @@ docker volume ls
 - project04 : FileBeat & Logstash (Beats & Grok Plugin) & 로그파일수집
 - project05 : Multi Node Elasticsearch Cluster
 - project06 : Beats, Kafka, Logstash, Elasticsearch, Kibana
+- project07 : Xpack (RBAC)
