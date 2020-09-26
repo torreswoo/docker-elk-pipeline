@@ -1,7 +1,7 @@
 
 
 ## templates & index 정보확인
-```
+```bash
 # templates 정보확인
 GET /_cat/templates?v 
 # index 정보확인 
@@ -15,7 +15,7 @@ GET /test_index/_mapping
 ```
 
 ## String - keywork & text
-```
+```bash
 PUT _template/test_template
 {
   "index_patterns": [
@@ -60,7 +60,7 @@ GET /test_index/_search
 ```
 
 ## Date
-```
+```bash
 PUT my_index
 {
   "mappings": {
@@ -89,7 +89,7 @@ GET my_index/_search
 ```
 
 ## Geo Point
-```
+```bash
 
 
 PUT my_index02
@@ -158,7 +158,7 @@ GET my_index02/_search
 ```
 
 ## template을 index생성 전에 적용
-```
+```bash
 # test_index_mapping_api 인덱스에 test_template_mapping_api 템플릿 생성
 PUT _template/test_template_mapping_api
 {
