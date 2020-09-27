@@ -1,5 +1,31 @@
 
 
+```bash
+DELETE /log-2020-07-21
+GET /log-2020-07-21/_mapping
+
+POST /log-2020-07-21/_doc/1
+{  
+    "projectName" : "카카오",
+    "logType": "web-log",
+    "logSource": "장바구니",
+    "logTime":"2020-07-21T06:07:49",
+    "host": "host01",
+    "body": "[2020-07-21T06:07:49.332Z] GET /beats HTTP/1.1 200 7691 - Mozilla/5.0 (X11; Linux x86_64; rv:6.0a1) Gecko/20110421 Firefox/6.0a1"
+}
+POST /log-2020-07-21/_doc/2
+{  
+    "projectName" : "카카오",
+    "logType": "web-log",
+    "logSource": "장바구니2",
+    "logTime":"2020-07-21T08:07:49",
+    "host": "host02",
+    "body": "[2020-07-21T06:07:49.332Z] GET /beats HTTP/1.1 200 7691 - Mozilla/5.0 (X11; Linux x86_64; rv:6.0a1) Gecko/20110421 Firefox/6.0a1"
+}
+
+GET log-2020-07-21/_search
+```
+
 ## templates & index 정보확인
 ```bash
 # templates 정보확인
