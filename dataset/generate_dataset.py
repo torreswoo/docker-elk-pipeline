@@ -79,7 +79,7 @@ def setup_index():
     #
     date = datetime.datetime(
       random.choice(range(2020, 2021)), 
-      random.choices(range(1, 11), weights=[0.2, 0.1, 0.05, 0.05, 0.07, 0.03, 0.02, 0.05, 0.1, 0.05], k=1)[0], 
+      random.choices(range(1, 10), weights=[0.2, 0.1, 0.05, 0.05, 0.07, 0.03, 0.02, 0.05, 0.1], k=1)[0], 
       random.choice(range(1, 29)), 
       random.choice(range(0, 24)), 
       random.choice(range(0, 60)), 
