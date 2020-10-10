@@ -124,7 +124,7 @@ GET /test_data/_search
 }
 
 # 04. Compound Query
-GET /shopping/_search
+GET /test_data/_search
 {
   "query": {
     "bool": {
