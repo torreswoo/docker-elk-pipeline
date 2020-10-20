@@ -7,6 +7,7 @@
 - http://localhost:9200/
 
 ```
+mkdir -p elasticsearch/data/data01 elasticsearch/data/data02 elasticsearch/data/data03
 docker-compose -f docker-compose.elasticsearch01.yml up
 docker-compose -f docker-compose.elasticsearch01.yml up --force-recreate --build 
 docker-compose up
