@@ -7,6 +7,7 @@
 - http://localhost:8080/
 
 ```
+mkdir -p ./beats/filebeat-nginx/log
 docker-compose -f docker-compose.beats02.filebeat.yml up
 docker-compose -f docker-compose.beats02.filebeat.yml up --force-recreate --build 
 docker-compose up
