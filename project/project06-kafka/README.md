@@ -16,3 +16,7 @@ docker-compose ls
 docker ps
 docker volume ls
 ```
+
+### kafka Manager setting
+
+![스크린샷 2020-10-26 오전 10 38 20](https://user-images.githubusercontent.com/11022719/97125573-b62ece80-1777-11eb-9eed-7da2209f2d9f.png)
