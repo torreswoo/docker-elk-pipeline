@@ -8,6 +8,7 @@
 - http://localhost:8080/ (nginx, index.html)
 - http://localhost:9000/ (kafka-manager)
 ```
+mkdir -p ./beats/filebeat-project/log/nginx
 docker-compose -f docker-compose.project.yml up
 docker-compose -f docker-compose.project.yml up --force-recreate --build 
 docker-compose up
