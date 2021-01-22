@@ -20,7 +20,7 @@ docker volume ls
 - https://www.elastic.co/guide/en/beats/metricbeat/current/command-line-options.html
 ```
 $ curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.8.0-darwin-x86_64.tar.gz
-tar xzvf metricbeat-7.8.0-darwin-x86_64.tar.gz
+$ tar xzvf metricbeat-7.8.0-darwin-x86_64.tar.gz
 
 $ ./metricbeat setup --dashboards
 $ ./metricbeat modules list 
