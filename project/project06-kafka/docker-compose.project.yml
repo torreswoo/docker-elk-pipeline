@@ -39,10 +39,6 @@ services:
         source: ./logstash/pipeline/logstash.conf
         target: /usr/share/logstash/pipeline/logstash.conf
         read_only: true
-      - type: bind
-        source: ./logstash/pattern/nginx.pattern
-        target: /usr/share/logstash/pattern/nginx.pattern
-        read_only: true
     ports:
       - "5000:5000"
       - "5044:5044"
