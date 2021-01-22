@@ -41,12 +41,12 @@ $ ./filebeat -e
 
 ### Filebeat & Logstash
 
-- input : project02/beats/filebeat-nginx/log/nginx/access.log
+- input : project04/beats/filebeat-nginx/log/nginx/access.log
 ```
 172.20.0.1 - - [28/Jun/2020:16:42:31 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36" "-"
 ```
 
-- filter & output : project02/logstash/ pipeline/logstash.conf & pattern/nginx.pattern
+- filter & output : project04/logstash/ pipeline/logstash.conf & pattern/nginx.pattern
 ```json
 {
    "ecs":{
