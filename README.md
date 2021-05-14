@@ -3,8 +3,6 @@
 
 ### Quick start
 ```
-docker-compose up
-docker-compose -f docker-compose.yml up
 docker-compose -f docker-compose.simple.yml up
 docker-compose ls
 docker ps
