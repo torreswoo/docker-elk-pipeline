@@ -80,6 +80,7 @@ $ python generate_dataset.py
 ### way02. docker run
 - `docker network ls` 명령어로 현재 docker compose가 사용하는 네트워크확인 아래의 경우엔 `docker-elk-pipeline_elk`
 ```
+$ cd dataset/
 $ docker build -f Dockerfile -t test-datagen .
 $ docker run --net=docker-elk-pipeline_elk test-datagen
 ```
