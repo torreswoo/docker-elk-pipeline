@@ -73,6 +73,7 @@
 ### way01. local run (using python)
 - ES_URL 주소를 내가 사용하는 elasticsearch 주소로 변경. https://github.com/torreswoo/docker-elk-pipeline/blob/master/dataset/generate_dataset.py#L13
 ```
+$ cd dataset/
 $ pip install elasticsearch
 $ python generate_dataset.py
 ```
