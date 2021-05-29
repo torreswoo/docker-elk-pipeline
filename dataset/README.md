@@ -13,9 +13,6 @@ PUT _template/template_test
     "number_of_shards": 1
   },
   "mappings": {
-    "_source": {
-      "enabled": false
-    },
     "properties": {
         "customer_address": {
           "type": "keyword"
