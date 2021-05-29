@@ -6,10 +6,17 @@
 ### Mapping
 
 ```json
+PUT _template/template_test
 {
-  "mapping": {
-    "_doc": {
-      "properties": {
+  "index_patterns": ["test_data"],
+  "settings": {
+    "number_of_shards": 1
+  },
+  "mappings": {
+    "_source": {
+      "enabled": false
+    },
+    "properties": {
         "customer_address": {
           "type": "keyword"
         },
@@ -44,10 +51,10 @@
           "type": "integer"
         }
       }
-    }
   }
 }
 ```
+
 
 ### 데이터
 
