@@ -3,6 +3,7 @@ version: '3.2'
 services:
   elasticsearch:
     image: elasticsearch:${ELK_VERSION}
+    platform: linux/x86_64
     # volumes:
     #   - type: bind
     #     source: ./elasticsearch/data
@@ -20,6 +21,7 @@ services:
       - elk
 
   logstash:
+    platform: linux/x86_64
     build:
       context: logstash/
       args:
@@ -48,6 +50,7 @@ services:
       - elasticsearch
 
   kibana:
+    platform: linux/x86_64
     image: kibana:${ELK_VERSION}
     ports:
       - "5601:5601"

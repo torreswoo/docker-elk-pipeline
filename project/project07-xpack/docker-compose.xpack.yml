@@ -2,6 +2,7 @@ version: '3.2'
 
 services:
   elasticsearch:
+    platform: linux/x86_64
     image: elasticsearch:${ELK_VERSION}
     # volumes:
     #   - type: bind
@@ -23,6 +24,7 @@ services:
       - elk
 
   kibana:
+    platform: linux/x86_64
     # image: kibana:${ELK_VERSION}
     build:
       context: kibana/

@@ -3,7 +3,7 @@ version: '3.2'
 services:
   elasticsearch:
     image: elasticsearch:${ELK_VERSION}
-    platform: linux/x86_64  
+    platform: linux/x86_64
     ports:
       - "9200:9200"
       - "9300:9300"

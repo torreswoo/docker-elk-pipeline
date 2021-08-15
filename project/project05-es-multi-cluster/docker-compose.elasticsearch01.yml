@@ -1,6 +1,7 @@
-version: '2.2'
+version: '3.2'
 services:
   es01:
+    platform: linux/x86_64
     image: docker.elastic.co/elasticsearch/elasticsearch:${ELK_VERSION}
     container_name: es01
     environment:
@@ -28,6 +29,7 @@ services:
     networks:
       - elastic
   es02:
+    platform: linux/x86_64
     image: docker.elastic.co/elasticsearch/elasticsearch:${ELK_VERSION}
     container_name: es02
     environment:
@@ -53,6 +55,7 @@ services:
     networks:
       - elastic
   es03:
+    platform: linux/x86_64
     image: docker.elastic.co/elasticsearch/elasticsearch:${ELK_VERSION}
     container_name: es03
     environment:
