@@ -1,6 +1,6 @@
 # Elastic Stack Pipeline
 - using Docker
-- 강의 https://learningspoons.com/offline-class/offline-ds/elastic-stack/
+- 강의 https://learningspoons.com/course/detail/elastic-stack/
 
 ### Quick start
 ```
